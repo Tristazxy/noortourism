@@ -1,0 +1,11 @@
+{
+  "_note": "SYNTHETIC demo data. Simulates the weekly booking feed from a tour company. Names and companies are fictional; dates are relative to today (dayOffset).",
+  "company": "Ondera Coffee Trails (fictional)",
+  "bookings": [
+    { "id": "bk_1", "dayOffset": 3,  "guests": 4, "leadName": "Giulia R.", "language": "it", "guide": "Juma",  "email": "giulia@example.com", "consent": true },
+    { "id": "bk_2", "dayOffset": 5,  "guests": 2, "leadName": "Wei L.",    "language": "zh", "guide": "Neema", "email": "wei@example.com",    "consent": true },
+    { "id": "bk_3", "dayOffset": 6,  "guests": 3, "leadName": "Anna K.",   "language": "pl", "guide": "Juma",  "email": "",                   "consent": false },
+    { "id": "bk_4", "dayOffset": 10, "guests": 2, "leadName": "Claire D.", "language": "fr", "guide": "Neema", "email": "claire@example.com", "consent": true },
+    { "id": "bk_5", "dayOffset": 12, "guests": 1, "leadName": "Tom B.",    "language": "en", "guide": "",      "email": "tom@example.com",    "consent": true }
+  ]
+}

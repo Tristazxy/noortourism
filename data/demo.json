@@ -1,0 +1,23 @@
+{
+  "_note": "SYNTHETIC demo data written by the team to show the workflow. Not real guests. Raw text only: the app runs the on-device models on it when you press Analyze.",
+  "guests": [
+    { "id": "demo_g1", "name": "Marco", "language": "it", "dayOffset": -25, "consent": true,  "email": "marco@example.com",
+      "liked": "Macinare il caffè cantando con la famiglia è stato bellissimo. Il pranzo era delizioso.",
+      "improve": "La strada per arrivare era molto difficile. Vorrei comprare un sacchetto di caffè da portare a casa." },
+    { "id": "demo_g2", "name": "Sophie", "language": "fr", "dayOffset": -20, "consent": true,  "email": "sophie@example.com",
+      "liked": "La balade dans la ferme avec la vue sur le Kilimandjaro était magnifique. La famille est très accueillante.",
+      "improve": "Les toilettes n'étaient pas propres. Nous aurions aimé acheter du café torréfié." },
+    { "id": "demo_g3", "name": "Li Na", "language": "zh", "dayOffset": -12, "consent": false, "email": "",
+      "liked": "自己烘焙和研磨咖啡非常有意思。午饭很好吃。",
+      "improve": "厕所需要改进。我们想买一些咖啡豆带回家。" },
+    { "id": "demo_g4", "name": "Emma", "language": "en", "dayOffset": -9, "consent": true, "email": "emma@example.com",
+      "liked": "Grinding the coffee while the family sang was the highlight of our trip. The banana beer was fun to try.",
+      "improve": "The road up was very bumpy and hard to find. I would have bought roasted coffee beans if they were for sale." },
+    { "id": "demo_g5", "name": "Amani", "language": "sw", "dayOffset": -6, "consent": false, "email": "",
+      "liked": "Nilipenda sana jinsi kahawa inavyoandaliwa.",
+      "improve": "Njia ni mbaya wakati wa mvua." },
+    { "id": "demo_g6", "name": "James", "language": "en", "dayOffset": -2, "consent": true, "email": "james@example.com",
+      "liked": "Learning how the coffee is grown and processed was fascinating. Lovely views of the waterfall.",
+      "improve": "It was hard to understand some of the explanations without a translator." }
+  ]
+}
