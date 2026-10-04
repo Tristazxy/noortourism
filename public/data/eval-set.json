@@ -1,0 +1,409 @@
+{
+ "_note": "SYNTHETIC test set written by the team (not real guests). Sentences were written separately from the topic examples in src/topics.js, but by the same people, so scores may be optimistic. Real guest feedback should be collected (with consent) to replace this.",
+ "topics": [
+  {
+   "text": "Roasting the beans over the fire was my favourite part.",
+   "topic": "coffee",
+   "mood": "pos"
+  },
+  {
+   "text": "The fresh cup of coffee at the end tasted amazing.",
+   "topic": "coffee",
+   "mood": "pos"
+  },
+  {
+   "text": "I finally understood how a coffee cherry becomes a drink.",
+   "topic": "coffee",
+   "mood": "pos"
+  },
+  {
+   "text": "Pounding the coffee in the wooden mortar was great fun.",
+   "topic": "coffee",
+   "mood": "pos"
+  },
+  {
+   "text": "The coffee was too bitter for me.",
+   "topic": "coffee",
+   "mood": "neg"
+  },
+  {
+   "text": "The path down to the waterfall was beautiful.",
+   "topic": "walk",
+   "mood": "pos"
+  },
+  {
+   "text": "We loved seeing Kilimanjaro from the farm.",
+   "topic": "walk",
+   "mood": "pos"
+  },
+  {
+   "text": "Walking under the banana trees was peaceful.",
+   "topic": "walk",
+   "mood": "pos"
+  },
+  {
+   "text": "The trail was muddy and slippery after the rain.",
+   "topic": "walk",
+   "mood": "neg"
+  },
+  {
+   "text": "The hike back up was exhausting for my parents.",
+   "topic": "walk",
+   "mood": "neg"
+  },
+  {
+   "text": "Lunch was the best meal of our whole trip.",
+   "topic": "food",
+   "mood": "pos"
+  },
+  {
+   "text": "The stew with plantains was delicious.",
+   "topic": "food",
+   "mood": "pos"
+  },
+  {
+   "text": "Trying the banana beer was a fun surprise.",
+   "topic": "food",
+   "mood": "pos"
+  },
+  {
+   "text": "There was nothing for vegetarians to eat.",
+   "topic": "food",
+   "mood": "neg"
+  },
+  {
+   "text": "The portions at lunch were too small.",
+   "topic": "food",
+   "mood": "neg"
+  },
+  {
+   "text": "Noor and her family made us feel very welcome.",
+   "topic": "host",
+   "mood": "pos"
+  },
+  {
+   "text": "The stories about the grandparents were moving.",
+   "topic": "host",
+   "mood": "pos"
+  },
+  {
+   "text": "The family sang for us while we worked.",
+   "topic": "host",
+   "mood": "pos"
+  },
+  {
+   "text": "Everyone was so kind and patient with the children.",
+   "topic": "host",
+   "mood": "pos"
+  },
+  {
+   "text": "Our host seemed tired and did not talk much.",
+   "topic": "host",
+   "mood": "neg"
+  },
+  {
+   "text": "The guide explained each step very clearly.",
+   "topic": "explain",
+   "mood": "pos"
+  },
+  {
+   "text": "We did not understand much because nobody translated.",
+   "topic": "explain",
+   "mood": "neg"
+  },
+  {
+   "text": "I wish someone had explained the history of the farm.",
+   "topic": "explain",
+   "mood": "neg"
+  },
+  {
+   "text": "The explanation of the drying process was really interesting.",
+   "topic": "explain",
+   "mood": "pos"
+  },
+  {
+   "text": "Without a shared language it was hard to ask questions.",
+   "topic": "explain",
+   "mood": "neg"
+  },
+  {
+   "text": "The tour was good value for the price.",
+   "topic": "price",
+   "mood": "pos"
+  },
+  {
+   "text": "It felt expensive compared to other tours.",
+   "topic": "price",
+   "mood": "neg"
+  },
+  {
+   "text": "Paying with mobile money was easy.",
+   "topic": "price",
+   "mood": "pos"
+  },
+  {
+   "text": "We were surprised by extra fees at the end.",
+   "topic": "price",
+   "mood": "neg"
+  },
+  {
+   "text": "The road up from Moshi was full of holes.",
+   "topic": "access",
+   "mood": "neg"
+  },
+  {
+   "text": "Our driver got lost looking for the farm.",
+   "topic": "access",
+   "mood": "neg"
+  },
+  {
+   "text": "There were no signs showing the way.",
+   "topic": "access",
+   "mood": "neg"
+  },
+  {
+   "text": "Getting there by motorbike was an adventure.",
+   "topic": "access",
+   "mood": "pos"
+  },
+  {
+   "text": "The toilet needs to be cleaner.",
+   "topic": "facilities",
+   "mood": "neg"
+  },
+  {
+   "text": "There was nowhere to wash our hands before lunch.",
+   "topic": "facilities",
+   "mood": "neg"
+  },
+  {
+   "text": "We needed more shade and somewhere to sit.",
+   "topic": "facilities",
+   "mood": "neg"
+  },
+  {
+   "text": "The bathroom was clean and simple.",
+   "topic": "facilities",
+   "mood": "pos"
+  },
+  {
+   "text": "I would happily have bought a bag of beans.",
+   "topic": "buy",
+   "mood": null
+  },
+  {
+   "text": "Please sell your coffee so visitors can take it home.",
+   "topic": "buy",
+   "mood": null
+  },
+  {
+   "text": "We bought two packets of roasted coffee as gifts.",
+   "topic": "buy",
+   "mood": "pos"
+  },
+  {
+   "text": "It would be nice to buy some souvenirs from the village.",
+   "topic": "buy",
+   "mood": null
+  },
+  {
+   "text": "The visit was over far too quickly.",
+   "topic": "timing",
+   "mood": "neg"
+  },
+  {
+   "text": "We waited almost an hour before starting.",
+   "topic": "timing",
+   "mood": "neg"
+  },
+  {
+   "text": "Three hours was just the right length.",
+   "topic": "timing",
+   "mood": "pos"
+  },
+  {
+   "text": "The afternoon felt rushed at the end.",
+   "topic": "timing",
+   "mood": "neg"
+  },
+  {
+   "text": "My sister lives in Canada.",
+   "topic": "other",
+   "mood": null
+  },
+  {
+   "text": "We are flying home on Tuesday.",
+   "topic": "other",
+   "mood": null
+  },
+  {
+   "text": "I lost my sunglasses somewhere.",
+   "topic": "other",
+   "mood": null
+  }
+ ],
+ "translation": {
+  "it": [
+   {
+    "src": "Il caffè era buonissimo e la famiglia molto gentile.",
+    "ref": "The coffee was very good and the family very kind.",
+    "topic": null
+   },
+   {
+    "src": "La strada per arrivare alla fattoria era difficile.",
+    "ref": "The road to get to the farm was difficult.",
+    "topic": "access"
+   },
+   {
+    "src": "Vorrei comprare del caffè da portare a casa.",
+    "ref": "I would like to buy some coffee to take home.",
+    "topic": "buy"
+   },
+   {
+    "src": "Il bagno dovrebbe essere più pulito.",
+    "ref": "The bathroom should be cleaner.",
+    "topic": "facilities"
+   },
+   {
+    "src": "Abbiamo adorato la passeggiata fino alla cascata.",
+    "ref": "We loved the walk to the waterfall.",
+    "topic": "walk"
+   }
+  ],
+  "fr": [
+   {
+    "src": "Le café était délicieux et la famille très accueillante.",
+    "ref": "The coffee was delicious and the family very welcoming.",
+    "topic": null
+   },
+   {
+    "src": "Le chemin était glissant après la pluie.",
+    "ref": "The path was slippery after the rain.",
+    "topic": "walk"
+   },
+   {
+    "src": "Nous aurions aimé acheter du café torréfié.",
+    "ref": "We would have liked to buy roasted coffee.",
+    "topic": "buy"
+   },
+   {
+    "src": "Les toilettes n'étaient pas propres.",
+    "ref": "The toilets were not clean.",
+    "topic": "facilities"
+   },
+   {
+    "src": "La visite était trop courte.",
+    "ref": "The visit was too short.",
+    "topic": "timing"
+   }
+  ],
+  "de": [
+   {
+    "src": "Das Rösten der Kaffeebohnen hat uns sehr gefallen.",
+    "ref": "We really enjoyed roasting the coffee beans.",
+    "topic": "coffee"
+   },
+   {
+    "src": "Der Weg zur Farm war schwer zu finden.",
+    "ref": "The way to the farm was hard to find.",
+    "topic": "access"
+   },
+   {
+    "src": "Wir hätten gern Kaffee zum Mitnehmen gekauft.",
+    "ref": "We would have liked to buy coffee to take away.",
+    "topic": "buy"
+   },
+   {
+    "src": "Das Mittagessen war sehr lecker.",
+    "ref": "Lunch was very tasty.",
+    "topic": "food"
+   },
+   {
+    "src": "Die Erklärungen waren klar und interessant.",
+    "ref": "The explanations were clear and interesting.",
+    "topic": "explain"
+   }
+  ],
+  "zh": [
+   {
+    "src": "咖啡非常好喝，主人一家很热情。",
+    "ref": "The coffee was very good and the host family was very warm.",
+    "topic": null
+   },
+   {
+    "src": "去农场的路很难走。",
+    "ref": "The road to the farm was hard to travel.",
+    "topic": "access"
+   },
+   {
+    "src": "我们想买一些咖啡豆带回家。",
+    "ref": "We wanted to buy some coffee beans to take home.",
+    "topic": "buy"
+   },
+   {
+    "src": "厕所需要改进。",
+    "ref": "The toilet needs improvement.",
+    "topic": "facilities"
+   },
+   {
+    "src": "午饭很好吃。",
+    "ref": "Lunch was delicious.",
+    "topic": "food"
+   }
+  ],
+  "es": [
+   {
+    "src": "Nos encantó tostar el café con la familia.",
+    "ref": "We loved roasting the coffee with the family.",
+    "topic": "coffee"
+   },
+   {
+    "src": "El camino estaba lleno de barro.",
+    "ref": "The path was full of mud.",
+    "topic": "walk"
+   },
+   {
+    "src": "Nos gustaría comprar café para llevar a casa.",
+    "ref": "We would like to buy coffee to take home.",
+    "topic": "buy"
+   },
+   {
+    "src": "El baño necesita mejorar.",
+    "ref": "The bathroom needs to improve.",
+    "topic": "facilities"
+   },
+   {
+    "src": "La visita fue demasiado corta.",
+    "ref": "The visit was too short.",
+    "topic": "timing"
+   }
+  ],
+  "pl": [
+   {
+    "src": "Kawa była pyszna, a rodzina bardzo gościnna.",
+    "ref": "The coffee was delicious and the family very hospitable.",
+    "topic": null
+   },
+   {
+    "src": "Droga na farmę była trudna.",
+    "ref": "The road to the farm was difficult.",
+    "topic": "access"
+   },
+   {
+    "src": "Chcielibyśmy kupić kawę do domu.",
+    "ref": "We would like to buy coffee for home.",
+    "topic": "buy"
+   },
+   {
+    "src": "Toaleta powinna być czystsza.",
+    "ref": "The toilet should be cleaner.",
+    "topic": "facilities"
+   },
+   {
+    "src": "Spacer do wodospadu był piękny.",
+    "ref": "The walk to the waterfall was beautiful.",
+    "topic": "walk"
+   }
+  ]
+ }
+}

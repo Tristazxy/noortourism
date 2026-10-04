@@ -16,9 +16,13 @@ export const MOOD_CONFLICT = 0.95;   // model strongly disagrees with the box th
 export const OCR_LOW = 70;           // Tesseract word confidence (0-100)
 
 let T = null;
+// Lets the Node accuracy check (tools/eval.mjs) use the npm build of the same library.
+export function setTransformers(mod) {
+  T = mod;
+}
 async function tf() {
   if (!T) {
-    T = await import(TRANSFORMERS_URL);
+    T = await import(/* @vite-ignore */ TRANSFORMERS_URL);
     T.env.allowLocalModels = false;
     T.env.useBrowserCache = true;
   }
@@ -56,6 +60,11 @@ async function getPipe(task, model, onProgress, label) {
     pipes.delete(key);
     throw err;
   }
+}
+
+export async function releaseTranslation(lang) {
+  const l = LANGS[lang];
+  if (l?.mt) await dropPipe('translation', l.mt);
 }
 
 async function dropPipe(task, model) {
@@ -222,7 +231,7 @@ let francMod = null;
 export async function guessLanguage(text) {
   if (!text || text.trim().length < 12) return null;
   try {
-    francMod = francMod || await import(FRANC_URL);
+    francMod = francMod || await import(/* @vite-ignore */ FRANC_URL);
     const code = francMod.franc(text, { only: Object.keys(FRANC_MAP) });
     return FRANC_MAP[code] || null;
   } catch {

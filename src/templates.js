@@ -30,6 +30,11 @@ export function weeklySms(bookings) {
   return `Kitabu: Wiki ijayo wageni ${total}.\n${lines.join('\n')}\nJibu NDIYO kukubali au HAPANA kukataa.`;
 }
 
+// A new-product idea is only raised with enough evidence: >= 3 guests AND >= 40% of guests.
+export function strongProduct(s) {
+  return s.guests ? s.products.find(p => p.guests >= 3 && p.guests / s.guests >= 0.4) || null : null;
+}
+
 // ---------- Swahili summary for Noor ----------
 /**
  * @param {Object} s  stats from summarize()
@@ -73,8 +78,7 @@ export function summaryText(s) {
     en.push('Products guests wanted to buy: ' + s.products.map(p => `${PRODUCTS.find(x => x.id === p.id).en} (${p.guests} guests)`).join('; ') + '.');
   }
 
-  // New product idea only with enough evidence: >= 3 guests AND >= 40% of guests.
-  const strong = s.products.find(p => p.guests >= 3 && p.guests / s.guests >= 0.4);
+  const strong = strongProduct(s);
   if (strong) {
     const p = PRODUCTS.find(x => x.id === strong.id);
     sw.push(`Wazo: wageni ${strong.guests} kati ya ${s.guests} walitaka ${p.sw}. Unaweza kufikiria kuuza ${p.sw}. Uamuzi ni wako.`);
@@ -144,6 +148,12 @@ export function thankYou(guest, likedTopicId) {
 export function hasTemplate(code) {
   return Boolean(THANKS[code]);
 }
+
+export const SUBJECTS = {
+  sw: 'Asante kutoka shamba la kahawa', en: 'Thank you from the coffee farm', it: 'Grazie dalla fattoria del caffè',
+  fr: 'Merci de la part de la ferme de café', de: 'Ein Dankeschön von der Kaffeefarm', zh: '来自咖啡农场的感谢',
+  es: 'Gracias desde la finca de café', pl: 'Podziękowanie z farmy kawy',
+};
 
 // ---------- Anonymized report for the guide / tourism centre ----------
 export function guideReport(s, periodLabel) {

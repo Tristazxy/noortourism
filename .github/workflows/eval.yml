@@ -1,0 +1,54 @@
+name: Accuracy check (on-device models + FLORES-200)
+
+# Runs the app's own topic, sentiment and translation code on a labeled test set and on the
+# published FLORES-200 benchmark, then commits public/data/eval-results.json (shown on eval.html).
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/ai.js'
+      - 'src/topics.js'
+      - 'src/pipeline.js'
+      - 'src/evalcore.js'
+      - 'src/langs.js'
+      - 'public/data/eval-set.json'
+      - 'tools/eval.mjs'
+      - '.github/workflows/eval.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: accuracy-check
+  cancel-in-progress: true
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install the AI library (same version as the app)
+        run: npm install --no-save --no-package-lock @huggingface/transformers@3.8.1
+      - name: Cache models and benchmark data
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: eval-cache-v1-${{ github.run_id }}
+          restore-keys: eval-cache-v1-
+      - name: Run accuracy check
+        run: node tools/eval.mjs
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/eval-results.json
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Update accuracy check results"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="sw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ukurasa wa Kitabu cha Wageni · Guestbook page</title>
+  <link rel="stylesheet" href="print.css">
+</head>
+<body>
+  <div class="toolbar">
+    <a href="../index.html">← Kitabu cha Wageni</a>
+    <button onclick="window.print()">Chapisha · Print (A4)</button>
+  </div>
+
+  <main class="sheet">
+    <header>
+      <div>
+        <h1>Kitabu cha Wageni · Guestbook</h1>
+        <div class="sub">Shamba la kahawa la Noor · Noor’s coffee farm</div>
+      </div>
+      <div class="pageno">Ukurasa Na. · Page no. <span class="blank"></span></div>
+    </header>
+
+    <div class="banner">
+      <b>Please write in your own language · Tafadhali andika kwa lugha yako</b><br>
+      Scrivi pure nella tua lingua · Écrivez dans votre propre langue · Schreiben Sie gern in Ihrer eigenen Sprache ·
+      Escriba en su propio idioma · Prosimy pisać we własnym języku · 请用您自己的语言书写 · ご自分の言語でお書きください
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <div class="label">Name · Jina</div>
+        <div class="tr">Nome · Nom · Nombre · Imię · 姓名</div>
+        <div class="line"></div>
+      </div>
+      <div class="field">
+        <div class="label">Date · Tarehe</div>
+        <div class="tr">Data · Date · Datum · Fecha · 日期</div>
+        <div class="line"></div>
+      </div>
+      <div class="field">
+        <div class="label">Your language · Lugha yako</div>
+        <div class="tr">La tua lingua · Votre langue · Ihre Sprache · Twój język · 您的语言</div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="box a">
+      <span class="letter" aria-hidden="true">A</span>
+      <div class="label">What did you like most? · Ulipenda nini zaidi?</div>
+      <div class="tr">Cosa ti è piaciuto di più? · Qu’avez-vous le plus aimé ? · Was hat Ihnen am besten gefallen? · ¿Qué le gustó más? · Co podobało się najbardziej? · 您最喜欢什么？</div>
+      <div class="space"></div>
+    </div>
+
+    <div class="box b">
+      <span class="letter" aria-hidden="true">B</span>
+      <div class="label">What could be better? · Nini kiboreshwe?</div>
+      <div class="tr">Cosa potremmo migliorare? · Qu’est-ce qui pourrait être amélioré ? · Was könnten wir besser machen? · ¿Qué podríamos mejorar? · Co możemy poprawić? · 有什么可以改进的？</div>
+      <div class="space"></div>
+    </div>
+
+    <div class="row" style="grid-template-columns: 1.3fr 1fr;">
+      <div>
+        <div class="label">Would you buy something to take home? · Ungependa kununua kitu cha kupeleka nyumbani?</div>
+        <div class="tr">Compreresti qualcosa da portare a casa? · Achèteriez-vous quelque chose à emporter ? · Würden Sie etwas zum Mitnehmen kaufen? · 您想买些东西带回家吗？</div>
+        <div class="checks">
+          <span><span class="sq"></span>Coffee · Kahawa · Caffè · Café · Kaffee · 咖啡</span>
+          <span><span class="sq"></span>Souvenirs · Zawadi · 纪念品</span>
+          <span><span class="sq"></span>Other · Nyingine · 其他: <span class="blank" style="min-width:30mm"></span></span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Who told you about us? · Nani alikuambia kuhusu sisi?</div>
+        <div class="tr">Chi ti ha parlato di noi? · Qui vous a parlé de nous ? · Wer hat Ihnen von uns erzählt? · 谁向您介绍了我们？</div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="row" style="grid-template-columns: 1fr 1fr;">
+      <div class="field">
+        <div class="label">Email (optional) · Barua pepe (hiari)</div>
+        <div class="tr">(facoltativo) · (facultatif) · (optional) · （可选）</div>
+        <div class="line"></div>
+      </div>
+      <div class="field">
+        <div class="label">Phone / WhatsApp (optional) · Simu (hiari)</div>
+        <div class="tr">Telefono · Téléphone · Telefon · 电话（可选）</div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="consent">
+      <div class="main"><span class="sq"></span>Noor may keep my contact details and write to me. · Noor anaweza kuhifadhi mawasiliano yangu na kuniandikia.</div>
+      A thank-you note, rarely news. I can ask her to delete them at any time. Without this tick, my contact details are not kept. ·
+      Ujumbe wa shukrani, mara chache habari. Naweza kumwomba ayafute wakati wowote. Bila alama hii, mawasiliano yangu hayahifadhiwi. ·
+      Noor può conservare i miei contatti e scrivermi; posso chiederle di cancellarli in qualsiasi momento. ·
+      Noor peut conserver mes coordonnées et m’écrire ; je peux demander leur suppression à tout moment. ·
+      Noor darf meine Kontaktdaten speichern und mir schreiben; ich kann jederzeit um Löschung bitten. ·
+      Noor 可以保存我的联系方式并给我写信；我可以随时要求删除。
+    </div>
+
+    <footer>
+      Your words are read on Noor’s phone by a translation tool and by her family. Tour companies only see totals — never your name or contact. ·
+      Maneno yako yanasomwa kwenye simu ya Noor na zana ya kutafsiri na familia yake. Kampuni za utalii zinaona jumla tu, si jina lako wala mawasiliano.<br>
+      Prefer to speak? Ask Noor to record a voice message. · Unapendelea kuongea? Mwombe Noor arekodi ujumbe wa sauti.<br>
+      <b>Kwa msaidizi · For the helper:</b> piga picha kisanduku A na B kila kimoja peke yake · photograph box A and box B separately.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* Printable pages for Noor: A4, black ink friendly, large boxes for photo reading. */
+@page { size: A4; margin: 11mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font: 10.5pt/1.35 system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans SC", "PingFang SC", sans-serif;
+  color: #111; background: #f3f2ec;
+}
+.sheet { width: 188mm; min-height: 275mm; margin: 10mm auto; background: #fff; padding: 0; }
+.toolbar { max-width: 188mm; margin: 10mm auto 0; display: flex; gap: 10px; align-items: center; justify-content: space-between; font-size: 11pt; }
+.toolbar button { font: inherit; font-weight: 650; padding: 10px 16px; border-radius: 10px; border: 1px solid #24533F; background: #24533F; color: #fff; cursor: pointer; min-height: 44px; }
+.toolbar a { color: #24533F; }
+header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #111; padding-bottom: 3mm; margin-bottom: 3mm; }
+h1 { font-size: 18pt; margin: 0; }
+.sub { font-size: 10pt; color: #333; }
+.pageno { font-size: 10pt; white-space: nowrap; }
+.blank { display: inline-block; border-bottom: 1px solid #111; min-width: 24mm; height: 5mm; vertical-align: bottom; }
+.banner { border: 1.5px solid #111; border-radius: 3mm; padding: 2.5mm 3mm; margin-bottom: 3mm; font-size: 8.6pt; line-height: 1.5; }
+.banner b { font-size: 10.5pt; }
+.label { font-weight: 700; font-size: 10.5pt; }
+.tr { font-size: 7.6pt; color: #333; font-weight: 400; }
+.row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; margin-bottom: 3mm; }
+.field .line { border-bottom: 1px solid #111; height: 8mm; }
+.box { border: 1.8px solid #111; border-radius: 3mm; padding: 2mm 15mm 2mm 3mm; margin-bottom: 3mm; position: relative; }
+.box .letter { position: absolute; right: 3mm; top: 2mm; font-size: 20pt; font-weight: 800; color: #111; }
+.box .space { height: 58mm; }
+.box.b .space { height: 46mm; }
+.checks { display: flex; flex-wrap: wrap; gap: 3mm 8mm; margin-top: 2mm; }
+.sq { display: inline-block; width: 4.5mm; height: 4.5mm; border: 1.4px solid #111; vertical-align: -1mm; margin-right: 1.5mm; }
+.consent { border: 1.5px dashed #111; border-radius: 3mm; padding: 2mm 3mm; font-size: 7.8pt; line-height: 1.45; margin-bottom: 2.5mm; }
+.consent .main { font-size: 9.5pt; font-weight: 700; }
+footer { font-size: 7.8pt; color: #333; border-top: 1px solid #999; padding-top: 2mm; line-height: 1.45; }
+table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+th, td { border: 1.3px solid #111; padding: 1.5mm 2mm; text-align: left; vertical-align: bottom; }
+th { font-size: 9pt; background: #f1f1f1; }
+th .tr { display: block; }
+td { height: 10.5mm; }
+.legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5mm 4mm; font-size: 9.5pt; margin: 2mm 0 3mm; }
+.code { display: inline-block; min-width: 8mm; font-weight: 800; border: 1.3px solid #111; text-align: center; margin-right: 2mm; border-radius: 1.5mm; }
+@media print {
+  body { background: #fff; }
+  .toolbar { display: none; }
+  .sheet { margin: 0; width: auto; min-height: auto; }
+}
+@media screen and (max-width: 760px) {
+  .sheet { width: auto; margin: 10px; padding: 10px; }
+  .toolbar { margin: 10px; }
+}

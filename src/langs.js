@@ -35,6 +35,10 @@ export const SHARED_MODELS = {
 
 export const KEEP_TOP_N = 3; // plus Swahili and English = 5 "essential" languages
 
+// Used until Noor has her own guest history: the largest non-African, non-English
+// source markets for Tanzania in 2024 (National Bureau of Statistics): Italy, France, Germany.
+export const DEFAULT_KEEP = ['it', 'fr', 'de'];
+
 export function langName(code, which = 'sw') {
   const l = LANGS[code];
   return l ? l[which] : code;
@@ -66,6 +70,8 @@ export function planPacks({ guests = [], bookings = [], installed = [], today = 
   }
   const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([c]) => c);
   const keep = ranked.slice(0, KEEP_TOP_N);
+  const usedDefaults = keep.length < KEEP_TOP_N;
+  for (const c of DEFAULT_KEEP) if (keep.length < KEEP_TOP_N && !keep.includes(c)) keep.push(c);
 
   // Upcoming: languages of bookings in the next 7 days (needed) and 14 days (protect from deletion).
   const next7 = new Set();
@@ -78,16 +84,20 @@ export function planPacks({ guests = [], bookings = [], installed = [], today = 
   }
 
   const inst = new Set(installed);
-  const download = [...new Set([...next7, ...keep])].filter(c => !inst.has(c));
+  const download = [...next7].filter(c => !inst.has(c));                      // booked in the next 7 days
+  const recommend = keep.filter(c => !inst.has(c) && !next7.has(c));          // common languages, when there is Wi-Fi
   const removable = [...inst].filter(c => !keep.includes(c) && !next14.has(c));
 
   return {
     counts,
     keep,
+    usedDefaults,        // true when national statistics filled gaps in Noor's own history
     needed: [...next7],
-    download,            // suggested downloads (Noor or helper confirms; costs data)
+    download,            // needed before booked guests arrive (Noor or helper confirms; costs data)
+    recommend,           // the kept common languages not yet on the phone
     removable,           // rare packs that can be deleted to free space (confirm first)
     downloadMB: download.length * PACK_MB,
+    recommendMB: recommend.length * PACK_MB,
     freeMB: removable.length * PACK_MB,
   };
 }

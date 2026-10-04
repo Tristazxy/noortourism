@@ -1,0 +1,16 @@
+{
+  "name": "kitabu-cha-wageni",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Offline, Swahili-first guestbook and feedback assistant for a small coffee-farm tour operator (Small AI for Development hackathon, tourism track).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tests/logic.test.mjs"
+  },
+  "devDependencies": {
+    "vite": "5.4.21"
+  }
+}

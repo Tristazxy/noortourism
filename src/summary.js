@@ -1,5 +1,10 @@
 // Turn analyzed feedback entries into counts. Pure logic.
 
+// A sentence needs a person to look at it unless someone already confirmed it.
+export function needsCheck(s) {
+  return !s.confirmed && (s.topic === 'other' || s.sentiment === 'unsure' || (s.flags || []).length > 0);
+}
+
 export function inPeriod(dateStr, period, today = new Date()) {
   if (period === 'all') return true;
   const d = new Date(dateStr);
@@ -31,9 +36,9 @@ export function summarize(entries, guests) {
     guestSet.add(e.guestId);
     if (e.lang === 'sw') swahiliEntries++;
     for (const s of e.sentences || []) {
-      const needsCheck = s.topic === 'other' || s.sentiment === 'unsure' || (s.flags && s.flags.length && !s.confirmed);
-      if (needsCheck) unsure++;
-      const quote = { entryId: e.id, en: s.en, original: s.original || null, lang: e.lang, flagged: needsCheck };
+      const flagged = needsCheck(s);
+      if (flagged) unsure++;
+      const quote = { entryId: e.id, en: s.en, original: s.original || null, lang: e.lang, flagged };
       if (s.sentiment === 'pos') bump(liked, s.topic, e.guestId, quote);
       else if (s.sentiment === 'neg') bump(improve, s.topic, e.guestId, quote);
     }

@@ -1,0 +1,38 @@
+name: Swahili voice clips (ElevenLabs)
+
+# Generates Noor's spoken-summary clips from audio/phrases-sw.json and commits them to
+# public/audio/sw/. Needs the repository secret ELEVENLABS_API_KEY. Only missing clips are
+# generated, so running on every push is cheap. Commits made here do not re-trigger workflows.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voice-clips
+  cancel-in-progress: false
+
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate clips
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_MODEL_ID: ${{ vars.ELEVENLABS_MODEL_ID }}
+        run: python3 tools/make_audio.py
+      - name: Commit clips
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/audio/sw
+          if git diff --cached --quiet; then echo "No new clips"; exit 0; fi
+          git commit -m "Update Swahili voice clips (ElevenLabs, synthetic voice)"
+          git pull --rebase origin main
+          git push origin HEAD:main
