@@ -1,0 +1,312 @@
+{
+ "generated": "2026-10-04T01:27:09.549Z",
+ "runner": "GitHub Actions (CPU, onnxruntime-node); same code as the app",
+ "thresholds": {
+  "topicMin": 0.3,
+  "moodMin": 0.85
+ },
+ "models": {
+  "topics": "Xenova/all-MiniLM-L6-v2",
+  "mood": "Xenova/distilbert-base-uncased-finetuned-sst-2-english"
+ },
+ "testSet": "synthetic, written by the team (see _note in eval-set.json)",
+ "topics": {
+  "n": 48,
+  "accuracy": 93.3,
+  "precisionWhenAnswered": 93.3,
+  "coverage": 100,
+  "abstainOnOther": 66.7,
+  "errors": [
+   {
+    "text": "Our host seemed tired and did not talk much.",
+    "gold": "host",
+    "pred": "explain",
+    "score": 0.523
+   },
+   {
+    "text": "I wish someone had explained the history of the farm.",
+    "gold": "explain",
+    "pred": "walk",
+    "score": 0.613
+   },
+   {
+    "text": "There were no signs showing the way.",
+    "gold": "access",
+    "pred": "facilities",
+    "score": 0.416
+   },
+   {
+    "text": "We are flying home on Tuesday.",
+    "gold": "other",
+    "pred": "host",
+    "score": 0.33
+   }
+  ]
+ },
+ "mood": {
+  "n": 42,
+  "accuracy": 92.9,
+  "precisionWhenAnswered": 95.1,
+  "coverage": 97.6,
+  "errors": [
+   {
+    "text": "Paying with mobile money was easy.",
+    "gold": "pos",
+    "pred": "neg",
+    "score": 0.942
+   },
+   {
+    "text": "We were surprised by extra fees at the end.",
+    "gold": "neg",
+    "pred": "pos",
+    "score": 0.931
+   }
+  ]
+ },
+ "flores": {
+  "benchmark": "FLORES-200",
+  "split": "devtest",
+  "sentences": 100,
+  "direction": "guest language -> English",
+  "license": "CC BY-SA 4.0",
+  "results": {
+   "it": {
+    "model": "Xenova/opus-mt-it-en",
+    "chrF": 57.8
+   },
+   "fr": {
+    "model": "Xenova/opus-mt-fr-en",
+    "chrF": 64.7
+   },
+   "de": {
+    "model": "Xenova/opus-mt-de-en",
+    "chrF": 64.2
+   },
+   "zh": {
+    "model": "Xenova/opus-mt-zh-en",
+    "chrF": 53.4
+   },
+   "es": {
+    "model": "Xenova/opus-mt-es-en",
+    "chrF": 56.2
+   },
+   "pl": {
+    "model": "Xenova/opus-mt-pl-en",
+    "chrF": 52.9
+   }
+  }
+ },
+ "translation": {
+  "it": {
+   "model": "Xenova/opus-mt-it-en",
+   "chrF": 84.1,
+   "topicAfterTranslation": {
+    "correct": 4,
+    "total": 4
+   },
+   "samples": [
+    {
+     "src": "Il caffè era buonissimo e la famiglia molto gentile.",
+     "ref": "The coffee was very good and the family very kind.",
+     "hyp": "The coffee was delicious and the family very kind."
+    },
+    {
+     "src": "La strada per arrivare alla fattoria era difficile.",
+     "ref": "The road to get to the farm was difficult.",
+     "hyp": "The way to the farm was difficult."
+    },
+    {
+     "src": "Vorrei comprare del caffè da portare a casa.",
+     "ref": "I would like to buy some coffee to take home.",
+     "hyp": "I'd like to buy some coffee to take home."
+    },
+    {
+     "src": "Il bagno dovrebbe essere più pulito.",
+     "ref": "The bathroom should be cleaner.",
+     "hyp": "The bathroom should be cleaner."
+    },
+    {
+     "src": "Abbiamo adorato la passeggiata fino alla cascata.",
+     "ref": "We loved the walk to the waterfall.",
+     "hyp": "We loved the walk to the waterfall."
+    }
+   ]
+  },
+  "fr": {
+   "model": "Xenova/opus-mt-fr-en",
+   "chrF": 83.8,
+   "topicAfterTranslation": {
+    "correct": 4,
+    "total": 4
+   },
+   "samples": [
+    {
+     "src": "Le café était délicieux et la famille très accueillante.",
+     "ref": "The coffee was delicious and the family very welcoming.",
+     "hyp": "The coffee was delicious and the family was very welcoming."
+    },
+    {
+     "src": "Le chemin était glissant après la pluie.",
+     "ref": "The path was slippery after the rain.",
+     "hyp": "The road was slippery after the rain."
+    },
+    {
+     "src": "Nous aurions aimé acheter du café torréfié.",
+     "ref": "We would have liked to buy roasted coffee.",
+     "hyp": "We would have liked to buy torfied coffee."
+    },
+    {
+     "src": "Les toilettes n'étaient pas propres.",
+     "ref": "The toilets were not clean.",
+     "hyp": "The toilet was not clean."
+    },
+    {
+     "src": "La visite était trop courte.",
+     "ref": "The visit was too short.",
+     "hyp": "The visit was too short."
+    }
+   ]
+  },
+  "de": {
+   "model": "Xenova/opus-mt-de-en",
+   "chrF": 80.8,
+   "topicAfterTranslation": {
+    "correct": 5,
+    "total": 5
+   },
+   "samples": [
+    {
+     "src": "Das Rösten der Kaffeebohnen hat uns sehr gefallen.",
+     "ref": "We really enjoyed roasting the coffee beans.",
+     "hyp": "We enjoyed roasting the coffee beans."
+    },
+    {
+     "src": "Der Weg zur Farm war schwer zu finden.",
+     "ref": "The way to the farm was hard to find.",
+     "hyp": "The way to the farm was hard to find."
+    },
+    {
+     "src": "Wir hätten gern Kaffee zum Mitnehmen gekauft.",
+     "ref": "We would have liked to buy coffee to take away.",
+     "hyp": "We'd like to buy coffee for the ride."
+    },
+    {
+     "src": "Das Mittagessen war sehr lecker.",
+     "ref": "Lunch was very tasty.",
+     "hyp": "Lunch was very tasty."
+    },
+    {
+     "src": "Die Erklärungen waren klar und interessant.",
+     "ref": "The explanations were clear and interesting.",
+     "hyp": "The explanations were clear and interesting."
+    }
+   ]
+  },
+  "zh": {
+   "model": "Xenova/opus-mt-zh-en",
+   "chrF": 54.8,
+   "topicAfterTranslation": {
+    "correct": 3,
+    "total": 4
+   },
+   "samples": [
+    {
+     "src": "咖啡非常好喝，主人一家很热情。",
+     "ref": "The coffee was very good and the host family was very warm.",
+     "hyp": "Coffee is very good, the family is very warm."
+    },
+    {
+     "src": "去农场的路很难走。",
+     "ref": "The road to the farm was hard to travel.",
+     "hyp": "It's hard to get to the farm."
+    },
+    {
+     "src": "我们想买一些咖啡豆带回家。",
+     "ref": "We wanted to buy some coffee beans to take home.",
+     "hyp": "We'd like to buy some coffee beans and bring them home."
+    },
+    {
+     "src": "厕所需要改进。",
+     "ref": "The toilet needs improvement.",
+     "hyp": "The toilet needs improvement."
+    },
+    {
+     "src": "午饭很好吃。",
+     "ref": "Lunch was delicious.",
+     "hyp": "Lunch is good."
+    }
+   ]
+  },
+  "es": {
+   "model": "Xenova/opus-mt-es-en",
+   "chrF": 81,
+   "topicAfterTranslation": {
+    "correct": 5,
+    "total": 5
+   },
+   "samples": [
+    {
+     "src": "Nos encantó tostar el café con la familia.",
+     "ref": "We loved roasting the coffee with the family.",
+     "hyp": "We loved toasting coffee with the family."
+    },
+    {
+     "src": "El camino estaba lleno de barro.",
+     "ref": "The path was full of mud.",
+     "hyp": "The road was full of mud."
+    },
+    {
+     "src": "Nos gustaría comprar café para llevar a casa.",
+     "ref": "We would like to buy coffee to take home.",
+     "hyp": "We'd like to buy coffee to take home."
+    },
+    {
+     "src": "El baño necesita mejorar.",
+     "ref": "The bathroom needs to improve.",
+     "hyp": "The bathroom needs to be improved."
+    },
+    {
+     "src": "La visita fue demasiado corta.",
+     "ref": "The visit was too short.",
+     "hyp": "The visit was too short."
+    }
+   ]
+  },
+  "pl": {
+   "model": "Xenova/opus-mt-pl-en",
+   "chrF": 75.3,
+   "topicAfterTranslation": {
+    "correct": 4,
+    "total": 4
+   },
+   "samples": [
+    {
+     "src": "Kawa była pyszna, a rodzina bardzo gościnna.",
+     "ref": "The coffee was delicious and the family very hospitable.",
+     "hyp": "Coffee was delicious, and family was very hospitable."
+    },
+    {
+     "src": "Droga na farmę była trudna.",
+     "ref": "The road to the farm was difficult.",
+     "hyp": "The way to the farm was difficult."
+    },
+    {
+     "src": "Chcielibyśmy kupić kawę do domu.",
+     "ref": "We would like to buy coffee for home.",
+     "hyp": "We'd like to buy coffee home."
+    },
+    {
+     "src": "Toaleta powinna być czystsza.",
+     "ref": "The toilet should be cleaner.",
+     "hyp": "The toilet should be cleaner."
+    },
+    {
+     "src": "Spacer do wodospadu był piękny.",
+     "ref": "The walk to the waterfall was beautiful.",
+     "hyp": "The waterfall was beautiful."
+    }
+   ]
+  }
+ },
+ "seconds": 370
+}
