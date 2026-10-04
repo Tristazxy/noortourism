@@ -1160,7 +1160,7 @@ async function warmCache() {
   if (!('caches' in window)) return;
   const shell = await caches.open('kitabu-shell-v2');
   const libs = await caches.open('kitabu-libs-v1');
-  const urls = new Set([location.href.split('#')[0]]);
+  const urls = new Set([new URL('index.html', location.href).href]);
   for (const e of performance.getEntriesByType('resource')) urls.add(e.name);
   await Promise.all([...urls].map(async u => {
     try {
